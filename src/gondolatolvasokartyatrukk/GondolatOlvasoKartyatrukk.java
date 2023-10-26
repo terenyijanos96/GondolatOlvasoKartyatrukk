@@ -50,8 +50,18 @@ public class GondolatOlvasoKartyatrukk {
         return oszlop;
     }
 
-    private static int kever(int oszlop) {
-        //a választott oszlop középre kerüljön
+    private static String[] kever(int oszlop) {
+        String[] uj_pakli = new String[MERET];
+        switch (oszlop) {
+            case 3:
+                for (int i = 1; i < MERET/3+1; i++) {
+                 uj_pakli[i]  = pakli[(MERET-2)-(i-1)*3];
+                 uj_pakli[i+MERET/3]  = pakli[(MERET-1)-(i-1)*3];
+                 uj_pakli[i+MERET/3*2]  = pakli[(MERET-3)-(i-1)*3];
+                }
+                break;                
+        }
+        return uj_pakli;
     }
 
     private static void ezVolt() {
