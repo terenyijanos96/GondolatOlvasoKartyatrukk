@@ -12,12 +12,9 @@ public class GondolatOlvasoKartyatrukk {
         feltolt();
         for (int i = 0; i < 3; i++) {
             kirak();
-            melyik();
-<<<<<<<HEAD
-                    pakli = kever();
-=======
-            kever(i);
->>>>>>>0e02 c898b987668cbf6aa4a57f801ec70b34715f
+            int oszlop = melyik();
+            pakli = kever(oszlop);
+            //kever(i);
         }
         ezVolt();
     }
