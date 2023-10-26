@@ -7,13 +7,13 @@ public class GondolatOlvasoKartyatrukk {
     static Scanner sc = new Scanner(System.in);
     static final int MERET = 22;
     static String[] pakli = new String[MERET];
-    
+
     public static void main(String[] args) {
         feltolt();
         for (int i = 0; i < 3; i++) {
             kirak();
             melyik();
-            kever();
+            pakli = kever();
         }
         ezVolt();
     }
@@ -29,7 +29,7 @@ public class GondolatOlvasoKartyatrukk {
             }
         }
     }
-    
+
     private static void kirak() {
         for (int i = 1; i < pakli.length; i++) {
             System.out.printf("%-7s", pakli[i]);
@@ -50,12 +50,24 @@ public class GondolatOlvasoKartyatrukk {
         return oszlop;
     }
 
-    private static int kever(int oszlop) {
-        //a választott oszlop középre kerüljön
+    private static String[] kever(int oszlop) {
+        String[] uj_pakli = new String[MERET];
+        switch (oszlop) {
+            case 2:
+                for (int i = 0; i < 7; i++) {
+                    uj_pakli[i] = pakli[19 - i];
+                    uj_pakli[i + 7] = pakli[20 - i];
+                    uj_pakli[i + 14] = pakli[21 - i];
+                }
+                break;
+        }
+        for (int i = 1; i < MERET; i++) {
+            pakli[i] = uj_pakli[i];
+        }
     }
 
     private static void ezVolt() {
         System.out.println("A gondolt lap: " + pakli[11]);
     }
-    
+
 }
