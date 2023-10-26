@@ -55,7 +55,7 @@ public class GondolatOlvasoKartyatrukk {
         String[] uj_pakli = new String[MERET];
         switch (oszlop) {
             case 2:
-                for (int i = 0; i < 7; i++) {
+                for (int i = 1; i < 8; i++) {
                     uj_pakli[i] = pakli[19 - i];
                     uj_pakli[i + 7] = pakli[20 - i];
                     uj_pakli[i + 14] = pakli[21 - i];
@@ -70,7 +70,7 @@ public class GondolatOlvasoKartyatrukk {
                 }
                 break;
             case 1:
-                for (int i = 0; i < 7; i++) {
+                for (int i = 1; i < 8; i++) {
                     uj_pakli[i] = pakli[20 - (i - 1) * 3];
                     uj_pakli[i + 7] = pakli[19 - (i - 1) * 3];
                     uj_pakli[i + 14] = pakli[21 - (i - 1) * 3];
